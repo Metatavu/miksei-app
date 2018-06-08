@@ -1,0 +1,40 @@
+{
+  "name": "miksei-app",
+  "description": "Mobile application for miksei mikkeli",
+  "main": "",
+  "authors": [
+    "Metatavu Oy"
+  ],
+  "license": "AGPL-3.0",
+  "homepage": "https://github.com/Metatavu/miksei-app",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "jquery-ui": "^1.12.1",
+    "bootstrap": "^4.1.1",
+    "flatpickr": "https://raw.githubusercontent.com/Metatavu/cdn/master/libs/flatpickr/4.0.6/flatpickr.min.js",
+    "fi": "https://raw.githubusercontent.com/Metatavu/cdn/master/libs/flatpickr/4.0.6/l10n/fi.js",
+    "modernizr": "https://raw.githubusercontent.com/Metatavu/cdn/master/libs/metaform-fields/0.6.18/js/modernizr.js",
+    "form-utils": "https://raw.githubusercontent.com/Metatavu/cdn/master/libs/metaform-fields/0.6.18/js/form-utils.js",
+    "form": "https://raw.githubusercontent.com/Metatavu/cdn/master/libs/metaform-fields/0.6.18/js/form.js",
+    "metaform-client": "https://raw.githubusercontent.com/Metatavu/cdn/master/libs/metaform-fields/0.6.18/js/metaform-client.min.js",
+    "components-font-awesome": "^4.7.0",
+    "moment": "^2.19.2",
+    "es6-shim": "^0.35.3",
+    "jquery-ui-css": "https://raw.githubusercontent.com/Metatavu/cdn/master/libs/jquery-ui/1.12.1/jquery-ui.min.css",
+    "flatpickr-css": "https://raw.githubusercontent.com/Metatavu/cdn/master/libs/flatpickr/4.0.6/flatpickr.min.css",
+    "form-css": "https://raw.githubusercontent.com/Metatavu/cdn/master/libs/metaform-fields/0.6.18/css/form.min.css",
+    "bootstrap-css": "https://raw.githubusercontent.com/Metatavu/cdn/master/libs/bootstrap/4.1.0/css/bootstrap.min.css"
+  },
+  "overrides": {
+    "moment": {
+      "main": "min/moment-with-locales.min.js"
+    }
+  }
+}

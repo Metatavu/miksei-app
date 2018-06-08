@@ -1,0 +1,14 @@
+ul(class="navigation-list")
+  li(class="list-item change-page" data-page-id="news")
+    .list-item-container
+      p(class="list-link") Uutiset
+  if authenticated
+    li(class="list-item change-page" data-page-id="metaform")
+      .list-item-container
+        p(class="list-link") Yhteinen yhteystieto
+  li(class="list-item")
+    .list-item-container
+      if authenticated
+        p(class="list-link logout") Kirjaudu ulos
+      else
+        p(class="list-link login") Kirjaudu sisään

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "810926543351",
+    "firebase_url": "https://essote-mobile.firebaseio.com",
+    "project_id": "essote-mobile",
+    "storage_bucket": "essote-mobile.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:810926543351:android:5fa1e95cb3727d57",
+        "android_client_info": {
+          "package_name": "fi.metatavu.essoteMobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "810926543351-9i4nrn3qdg3a0ash0d2ro9gtg9faiiri.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEbnV-BSar1QMsPUgUlKy3I-qH6Y2CVNw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
