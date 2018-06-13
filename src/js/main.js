@@ -205,7 +205,7 @@
         for (let i = 0; i < 10; i++) {
           $('.news-container').append(
           `<div class="news-article">
-            <div class="news-article-heading" onclick="window.open('${news[i].url}', '_blank', 'location=yes');" style="cursor:pointer;">
+            <div class="news-article-heading" onclick="window.open('${news[i].url}', '_blank', 'location=yes,shouldPauseOnSuspend=yes');" style="cursor:pointer;">
               <a href="#">
                 <h2>${news[i].heading}</h2>
               </a>
