@@ -18,3 +18,4 @@ npm-debug.log
 /src/api-client/node_modules/
 /config.json
 .DS_Store
+/private
