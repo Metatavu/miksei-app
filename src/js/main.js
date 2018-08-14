@@ -235,6 +235,11 @@
         this.togglePageDisplay('news');
       }
     },
+
+    resetFormValues: function () {
+      $('.metaform-container').html('');
+      this.renderMetaform();
+    },
     
     buildNavigation: function () {
       const navigationOptions = {
@@ -275,6 +280,7 @@
       event.preventDefault();
       this.mikseiMikkeli.submitForm().then(() => {
         this.displayAlert(true, 'Lomake lähetettiin onnistuneesti.');
+        this.resetFormValues();
       });
     },
     
