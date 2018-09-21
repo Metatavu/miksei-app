@@ -9,14 +9,16 @@ html(lang='en')
     meta(name='format-detection', content='telephone=no')
     meta(name='msapplication-tap-highlight', content='no')
     meta(name='viewport', content='user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width')
+    script(defer="defer", src='js/pug-templates.js')
     // bower:js 
     // endbower
     script(src="cordova.js",type="text/javascript")
-    //script(src='js/metaform-api-client.js',type="text/javascript")
-    script(src='js/pug-templates.js')
-    script(src='js/config.js')
+    script(defer="defer", src='js/config.js')
     //script(src='https://cdn.metatavu.io/libs/tools/debug/0.0.4/debug.js')
-    script(src='js/main.min.js')
+    script(defer='defer',src='https://cdn.metatavu.io/libs/hyperform/0.8.15/hyperform.min.js',type='text/javascript')
+    script(defer="defer", src='https://cdn.metatavu.io/libs/metaform-fields/0.6.20/js/metaform-client.min.js')
+    script(defer="defer", src='js/main.min.js')
+
     // bower:css 
     // endbower
     link(rel='stylesheet', href='css/app.min.css')

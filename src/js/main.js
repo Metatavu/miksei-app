@@ -115,7 +115,6 @@
       return new Promise((resolve, reject) => {
         this.authenticate().then(() => {
           this.keycloak.updateToken(this.minTokenValidity).success(() => {
-            console.log(this.keycloak.token);
             resolve(this.keycloak.token);
           }).error((err) => {
             console.error("Error while updating token");
@@ -223,6 +222,7 @@
       if (this.mikseiMikkeli.userIsAuthenticated()) {
         this.togglePageDisplay('metaform');
         return this.mikseiMikkeli.getMetaform().then((results) => {
+          console.log(window.hyperform);
           const html = mfRender({
             viewModel: results,
             formValues: {}
