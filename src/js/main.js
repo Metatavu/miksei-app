@@ -150,7 +150,7 @@
       $(document).on('click', '.toggle-navigation', $.proxy(this.toggleNavigation, this));
       $(document).on('click', '.navigation', $.proxy(this.closeNavigation, this));
       $(document).on('click', '.change-page', $.proxy(this.navigationItemClicked, this));
-      $(document).on('click', 'input[type="submit"]', $.proxy(this.submitMetaform, this));
+      $(document).on('submit', 'form.metaform', $.proxy(this.submitMetaform, this));
       $(document).on('click', '.login', $.proxy(this.login, this));
       $(document).on('click', '.logout', $.proxy(this.logout, this));
     },
@@ -222,9 +222,8 @@
       if (this.mikseiMikkeli.userIsAuthenticated()) {
         this.togglePageDisplay('metaform');
         return this.mikseiMikkeli.getMetaform().then((results) => {
-          console.log(window.hyperform);
           const html = mfRender({
-            viewModel: results,
+            viewModel: this.filterMetaformContextFields(results, "FORM"),
             formValues: {}
           });
 
@@ -234,6 +233,25 @@
       } else {
         this.togglePageDisplay('news');
       }
+    },
+
+    /**
+     * Creates (cloned) version of input Metaform with fields 
+     * filter to match specific context 
+     * 
+     * @param {Object} metaform metaform
+     * @param {String} context context
+     */
+    filterMetaformContextFields: function(metaform, context) {
+      const result = JSON.parse(JSON.stringify(metaform));
+
+      result.sections.forEach((section) => {
+        section.fields = section.fields.filter((field) => {
+          return !field.contexts || field.contexts.length === 0 || field.contexts.indexOf(context) > -1;
+        });
+      });
+
+      return result;
     },
 
     resetFormValues: function () {
@@ -277,9 +295,8 @@
     },
     
     submitMetaform: function (event) {
-      event.preventDefault();
       this.mikseiMikkeli.submitForm().then(() => {
-        this.displayAlert(true, 'Lomake lähetettiin onnistuneesti.');
+        this.displayAlert('Lomake lähetettiin onnistuneesti.');
         this.resetFormValues();
       });
     },
@@ -294,10 +311,10 @@
       this.initKeycloak('login-required');
     },
     
-    displayAlert: function (success, message) {
-      $('.alert').addClass(success ? 'alert-success' : 'alert-danger');
-      $('.alert').html(`<p>${message}</p>`);
-      $('.alert').show();
+    displayAlert: function (message) {
+      $('.alert-success')
+        .html(`<p>${message}</p>`)
+        .show();
       
       setTimeout(() => {
         $('.alert').hide();
